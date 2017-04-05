@@ -15,11 +15,17 @@
 
 <font face="tahoma" size="40" color="red">
 <p align=center id="demo"></p>
+
+<p id="demo2"></p>
+
 </font>
 
 </td>
 </tr>
 </table>
+
+
+
 </p>
 
 <script>
@@ -28,8 +34,10 @@ var text2 = "";
 var saat2 = "";
 var saat1 = 59;
 var minit1 = 3;
+var load = (saat1+1) * minit1;
+var totals = (saat1+1) * minit1;
 
-minit1++;
+
 
 setInterval(function() {
 
@@ -39,11 +47,15 @@ setInterval(function() {
 	saat2 = saat1;	
 	minit1--;
 	
+	
+	
 	}
 		
 		document.getElementById("demo").innerHTML = minit1 + " : " + saat2;
 		saat2--;
-  
+		
+		load--;
+		document.getElementById("demo2").innerHTML = "<table bgcolor=red align=center height=25px width=" + (load/totals)*100 + "%><tr><td> </td></tr> ";
   
 	if(minit1 <= -1){
 	
@@ -56,6 +68,11 @@ setInterval(function() {
 		
 	
 	}
+	
+	
+	//document.getElementById("demo2").innerHTML = "<table bgcolor=red align=center width=" + saat1 + "%><tr><td>loading</td></tr> ";
+	
+	
  
 }, 1000);
 
