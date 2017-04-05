@@ -3,20 +3,41 @@
 <body>
 <p id="demo"></p>
 <script>
-var text = "";
-var i;
-var time1 = 10;
+
+var text2 = "";
+var saat2 = "";
+var saat1 = 59;
+var minit1 = 3;
+
+minit1++;
+
 setInterval(function() {
 
-	//for (i=10; i > 0; --i){
-		
-		text =  time1;
-		document.getElementById("demo").innerHTML = text;
-		time1--;
 	
+	if(saat2 <= -1){
+	
+	saat2 = saat1;	
+	minit1--;
+	
+	}
+		
+		document.getElementById("demo").innerHTML = minit1 + " : " + saat2;
+		saat2--;
   
+  
+	if(minit1 <= -1){
+	
+	minit1 = -2;
+	saat1 = 70;
+	document.getElementById("demo").innerHTML = "Jemput makan.." + "";
+	
+	}
  
 }, 1000);
+
+
+
+
 </script>
 
 
