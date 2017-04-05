@@ -2,6 +2,12 @@
 <html>
 <body bgcolor="#000000">
 
+<audio id="myAudio">
+	<source src="alarm.mp3" type="audio/mpeg">
+	Your browser does not support the audio element.
+</audio>
+
+
 <p>
 <table bgcolor="#00001a" align=center width=50%>
 <tr>
@@ -20,7 +26,7 @@
 
 var text2 = "";
 var saat2 = "";
-var saat1 = 59;
+var saat1 = 1;
 var minit1 = 3;
 
 minit1++;
@@ -44,6 +50,10 @@ setInterval(function() {
 	minit1 = -2;
 	saat1 = 70;
 	document.getElementById("demo").innerHTML = "Jemput makan.." + "";
+	
+	var x = document.getElementById("myAudio");
+		x.play();
+		
 	
 	}
  
